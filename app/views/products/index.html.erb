@@ -27,6 +27,14 @@
     <% end %>
     
   </tbody>
+  <!--put AR here -->
+  <% total_unique_products = Product.count %> 
+  <% avg_price_products = Product.average(:price) %>
+  <% total_stock_quants = Product.sum(:stock_quantity) %>
+  <h3>Total Unique Products: <%=total_unique_products%></h3>
+  <h3>Average Price of Products: <%=avg_price_products.round(2)%></h3>
+  <h3>Total stock of all Products: <%=total_stock_quants%></h3>
+  
 </table>
 
 <br>
